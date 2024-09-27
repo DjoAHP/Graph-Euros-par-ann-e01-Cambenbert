@@ -8,7 +8,7 @@
 <!-- STYLE -->
 <style>
   body {
-background: none;
+background: #000000;
   }
 
   .highcharts-background {
@@ -28,7 +28,6 @@ background: none;
 
 <!-- SCRIPT -->
 <script>
-// Initialisation du graphique Highcharts (Camembert)
 Highcharts.chart('container', {
     chart: {
         type: 'pie' // Type camembert (pie chart)
@@ -45,24 +44,35 @@ Highcharts.chart('container', {
             cursor: 'pointer',
             dataLabels: {
                 enabled: true,
-                format: '{point.name}: {point.y} €', // Affichage du nom (année) et du montant en euros
+                format: '{point.name}: {point.y} €', // Affiche l'année et le montant
+                
                 style: {
+                    color: 'white', // Couleur du texte (vous pouvez ajuster)
                     fontWeight: 'bold',
-                    color: '#000000'
+                    textOutline: 'none' // Supprime le contour autour du texte
                 }
-            }
+            },
+            showInLegend: true // Affiche la légende
+        }
+    },
+  legend: {
+        itemStyle: {
+            color: 'white', // Couleur des années dans la légende
+            
         }
     },
     series: [{
-        name: 'Montant en euros',
+        name: '',
         colorByPoint: true,
         data: [
-            { name: '2018', y: 2000 },
-            { name: '2019', y: 2500 },
-            { name: '2020', y: 3000 },
-            { name: '2021', y: 3500 },
-            { name: '2022', y: 4000 },
-            { name: '2023', y: 4500 }
+            { name: '2023', y: 2000 },
+            { name: '2024', y: 2500 },
+            // { name: '2025', y: 0 },
+            // { name: '2026', y: 0 },
+            // { name: '2027', y: 0 },
+            // { name: '2028', y: 0 },
+            // { name: '2029', y: 0 },
+            // { name: '2030', y: 0 }
         ]
     }]
 });
